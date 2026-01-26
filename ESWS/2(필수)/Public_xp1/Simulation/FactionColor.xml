@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Datatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <Color Name="Red" Red="0.800" Green="0.000" Blue="0.000"/>
+  <Color Name="Blue" Red="0.000" Green="0.400" Blue="1.000"/>
+  <Color Name="Teal" Red="0.000" Green="0.800" Blue="0.800"/>
+  <Color Name="Purple" Red="0.600" Green="0.000" Blue="0.800"/>
+  <Color Name="Yellow" Red="1.000" Green="0.890" Blue="0.000"/>
+  <Color Name="Orange" Red="1.000" Green="0.529" Blue="0.180"/>
+  <Color Name="Green" Red="0.000" Green="0.800" Blue="0.000"/>
+  <Color Name="Brown" Red="0.471" Green="0.271" Blue="0.055"/>
+  <Color Name="Pink" Red="1.000" Green="0.600" Blue="0.800"/>
+  <Color Name="White" Red="0.900" Green="0.900" Blue="0.900"/>
+  <Color Name="LightBlue" Red="0.450" Green="0.800" Blue="1.000"/>
+  <Color Name="DarkGreen" Red="0.047" Green="0.439" Blue="0.141"/>
+  <Color Name="Gray" Red="0.600" Green="0.600" Blue="0.600"/>
+  <Color Name="Black" Red="0.100" Green="0.100" Blue="0.100"/>
+  <Color Name="Violet" Red="0.650" Green="0.250" Blue="0.900"/>
+  <Color Name="Mint" Red="0.300" Green="1.000" Blue="0.700"/>
+  <Color Name="Lime" Red="0.700" Green="1.000" Blue="0.200"/>
+  <Color Name="Scarlet" Red="1.000" Green="0.180" Blue="0.180"/>
+  <Color Name="Navy" Red="0.000" Green="0.200" Blue="0.500"/>
+  <Color Name="Gold" Red="1.000" Green="0.843" Blue="0.000"/>
+
+  <!-- last one is reserved for pirates -->
+  <Color Name="Pirate" Red="0.219" Green="0.219" Blue="0.219"/>
+
+</Datatable>

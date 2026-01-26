@@ -1,0 +1,106 @@
+v1.0
+원반4 중앙진출맵
+한글화 파일
+v1.0.1
+트레잇 포인트 최대 88로 상향(추후 밸런스 패치 예정)
+GameDifficulty 파일 수정
+-확장 행복도 일원화
+-보너스, 패널티 체계화
+GameSpeed 파일 수정
+-평화조약 시간 줄이기
+-점령 최소시간 10턴으로 줄임
+GalaxySettings 파일 수정
+-종족별 시작 성계 설정 가능
+-모든 성계 행성 3개 균일화
+-소행성대 싹다 날림
+TechnologyExpansion 파일 일부 수정
+-소행성 개척 기술 없앴음
+Hero 파일 수정
+-영웅들 기본 스텟 2배
+-직업 스킬 공통 스킬화
+Hull과 ShipDescripter 파일 일부 수정
+-종족별 순서 정렬
+-공통 함급 특성
+-함급 재정립
+v1.0.2
+ShipDescripter 파일 일부 수정
+-함선 유지비 지휘력당 1로
+GameDifficulty 파일 수정
+-뉴 난이도 체계 출시
+Hull 파일 수정
+-함급에 따라 가중 비례 산업요구
+GalaxySettings 파일 수정
+-default 설정을 정규 게임으로
+-그러나 막상 설치시에는 적용안됨
+GalaxyConfiguration 파일 수정
+-dafault 설정 건드리는것 보다 효율적
+Hero 파일 수정
+-영웅들 기본 스텟 롤백
+-만렙 18렙
+HeroAbility 파일 수정
+-스킬 시스템 리메이크
+HeroDescriptor 파일 수정
+-스킬 시스템 리메이크
+-근접전당 행복 1
+-직업 경험치 보너스 제거
+FactionColor 파일 수정
+-색상 대거 추가
+Localization 한패 추가
+v1.0.3
+오류로그 발생 HeroAbility 파일 수정 해결?
+v1.0.4
+Hull 파일 수정
+-누락 수정, 함선체력 산업 비례
+HeroAbility 파일 수정
+-베테랑4 가는길 더 어렵게
+GalaxySettings 파일 수정
+-수도행성 4개
+-25%확률로 행성4개
+GameSpeed 파일 수정
+-침공 최소 5턴 침공속도 50% 향상
+v1.0.5
+GalaxySettings 파일 수정
+-소행성대 완전 제거
+SupportModule 파일 추가 및 수정
+보조모듈 무계 비례 제거 구축함 기준으로, 장갑모듈 유니크
+Term 파일 추가 및 수정
+-무역조약 상향
+HeroAbility, HeroDescriptor 파일 수정
+-사이버 스킬 제대로 적용?
+Hero 파일 수정
+-만렙 10렙
+Ai 파일 및 문서 대거 추가
+- 함급 빈도 수정(전투함이 점령함의 2배, 고위함급 생산확률 2의 제곱)
+PirateDifficulty 파일 수정
+-해적 함급 1단계 다운
+EmpireDescriptor 추가 및 변경
+-세법의 정상화
+v1.0.6
+HeroDescriptor 파일 수정
+-전투 능력치 배율 감소
+Hero 파일 수정
+-경험치 최대치 조정
+GameDifficultyDescriptor 파일 수정
+-Ai의 행복도 +20(행성선택의 비효율성)
+GameSpeed 파일 수정
+-점령 속도 대폭 상향
+AI 함선설계 파일 수정
+-ai의 함선설계 개선
+-Small1 Small2 직접설계 단일화
+-오류까지 싹다 고쳐서 완성 휴 1/9
+EmpireDescriptor 파일 수정
+-최대 영웅 5명
+Hull 파일 수정
+-Speed는 시작 특성 관련 건들면 안됨
+HeroDescriptor 파일 수정
+-재치가 교역로 보너스%
+v1.0.7
+SupportModule
+-장갑및 보조모듈 무게 조정1
+Localization_Locales 파일 수정
+-교역 협정 설명 수정
+
+ToDoList
+영토내 함대 유지비 절감
+필그림 이주선 설정
+종족당 특화기술 2개
