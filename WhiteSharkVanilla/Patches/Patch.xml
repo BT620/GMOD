@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+  <!--
+  <Operation Class="PatchOperationRemove">
+	<xpath>/Defs/ThingDef[defName = "Sandstone"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+	<xpath>/Defs/ThingDef[defName = "Granite"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+	<xpath>/Defs/ThingDef[defName = "Limestone"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+	<xpath>/Defs/ThingDef[defName = "Slate"]</xpath>
+  </Operation>
+
+  -->
+
+
+  <!-- Road Remove -->
+
+  <Operation Class="PatchOperationRemove">
+	<xpath>/Defs/WorldGenStepDef[defName = "AncientRoads"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+	<xpath>/Defs/WorldGenStepDef[defName = "Roads"]</xpath>
+  </Operation>
+
+
+	<!-- Never Retreat -->
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>*/MentalStateDef[defName = "PanicFlee"]/stateClass</xpath>
+    <value>
+      <stateClass>NeverRetreat.MentalState_PanicFleeNoHostile</stateClass>
+    </value>
+  </Operation>
+
+	<!-- Rain and Time -->
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+
+			<!-- Filth Vanishes With Rain And Time -->
+				
+			<!-- Remove all entries for rainWashes then readd them to ensure they're all true -->
+			
+            <li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[filth]/filth/rainWashes</xpath>
+            </li>
+
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[filth]/filth</xpath>
+				<value>
+					<rainWashes>true</rainWashes>
+				</value>
+			</li>
+				
+			<!-- Only change entries with disappearsInDays 15 or above -->
+
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef [number(substring-before(filth/disappearsInDays, '~')) >= 15] /filth/disappearsInDays</xpath>
+				<value>
+					<disappearsInDays>14~15</disappearsInDays>
+				</value>
+			</li>
+			
+		</operations>
+	</Operation>
+
+
+
+	<!-- No Carried Food -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThinkTreeDef[defName="Humanlike"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalColonist"]/subNodes/li[@Class="ThinkNode_ConditionalNeedPercentageAbove" and need[text()="Food"]]/threshold</xpath>
+		<value>
+			<threshold>1</threshold>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+				<li>Android tiers</li>
+		</mods>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/ThinkTreeDef[defName="AndroidLike"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalColonist"]/subNodes/li[@Class="ThinkNode_ConditionalNeedPercentageAbove" and need[text()="Food"]]/threshold</xpath>
+			<value>
+				<threshold>1</threshold>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+				<li>The Human Hive</li>
+		</mods>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/ThinkTreeDef[defName="HiveQueenT"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalColonist"]/subNodes/li[@Class="ThinkNode_ConditionalNeedPercentageAbove" and need[text()="Food"]]/threshold</xpath>
+			<value>
+				<threshold>1</threshold>
+			</value>
+		</match>
+	</Operation>
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+				<li>The Human Hive</li>
+		</mods>
+		<match Class="PatchOperationReplace">
+			<xpath>Defs/ThinkTreeDef[defName="HiveThinkTree"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalColonist"]/subNodes/li[@Class="ThinkNode_ConditionalNeedPercentageAbove" and need[text()="Food"]]/threshold</xpath>
+			<value>
+				<threshold>1</threshold>
+			</value>
+		</match>
+	</Operation>
+
+  	<!-- Romance Mood -->
+
+  	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThoughtDef[defName = "RebuffedMyRomanceAttemptMood"]/stackLimit</xpath>
+		<value>
+			<stackLimit>1</stackLimit>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThoughtDef[defName = "FailedRomanceAttemptOnMeLowOpinionMood"]/stackLimit</xpath>
+		<value>
+			<stackLimit>1</stackLimit>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThoughtDef[defName = "BrokeUpWithMeMood"]/stackLimit</xpath>
+		<value>
+			<stackLimit>1</stackLimit>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThoughtDef[defName = "CheatedOnMeMood"]/stackLimit</xpath>
+		<value>
+			<stackLimit>1</stackLimit>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThoughtDef[defName = "DivorcedMeMood"]/stackLimit</xpath>
+		<value>
+			<stackLimit>1</stackLimit>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThoughtDef[defName = "RejectedMyProposalMood"]/stackLimit</xpath>
+		<value>
+			<stackLimit>1</stackLimit>
+		</value>
+	</Operation>
+
+  <!-- SleepDisturbed -->
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThoughtDef[defName = "SleepDisturbed"]/durationDays</xpath>
+	<value>
+	  <durationDays>0.0001</durationDays>
+	</value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThoughtDef[defName = "SleepDisturbed"]/stackLimit</xpath>
+	<value>
+	    <stackLimit>0</stackLimit>
+	</value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThoughtDef[defName = "SleepDisturbed"]/showBubble</xpath>
+	<value>
+	  <showBubble>false</showBubble>
+	</value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThoughtDef[defName = "SleepDisturbed"]/stackedEffectMultiplier</xpath>
+	<value>
+	  <stackedEffectMultiplier>0</stackedEffectMultiplier>
+	</value>
+  </Operation>  
+
+  <!-- RocketPatch -->
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/RecipeDef[defName="DestroyWeapon"]/defaultIngredientFilter/disallowedThingDefs</xpath>
+	<value>
+	  <disallowedThingDefs>
+        <li>OrbitalTargeterPowerBeam</li>
+        <li>OrbitalTargeterBombardment</li>
+        <li>TornadoGenerator</li>
+	  </disallowedThingDefs>
+	</value>
+  </Operation>
+  
+  <!-- Natural Rock wall statBases -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName = "Sandstone" or defName = "Granite" or defName = "Limestone" or defName = "Slate" or defName = "Marble"]/statBases</xpath>
+		<value>
+			<statBases>
+				<MaxHitPoints>900</MaxHitPoints> <!-- normal varies, granite 900-->
+				<Beauty>-1</Beauty> <!-- normal -2, marble -1-->
+			</statBases>
+		</value>
+	</Operation>
+
+<!-- Smoothed Natural Rock wall statBases -->	
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName = "SmoothedSandstone" or defName = "SmoothedGranite" or defName = "SmoothedLimestone" or defName = "SmoothedSlate" or defName = "SmoothedMarble"]/statBases</xpath>
+		<value>
+			<statBases>
+			      <Beauty>2</Beauty> <!-- normal 1, marble 2-->
+				  <MarketValue>25</MarketValue> <!-- marble -->
+			</statBases>
+		</value>
+	</Operation>
+
+<!-- Rock Blocks Items statBases, influences built walls -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName = "BlocksSandstone" or defName = "BlocksGranite" or defName = "BlocksLimestone" or defName = "BlocksSlate" or defName = "BlocksMarble"]/statBases</xpath>
+		<value>
+			<statBases>
+				<Mass>1.25</Mass> <!-- granite -->
+				<SharpDamageMultiplier>.65</SharpDamageMultiplier> <!-- granite -->
+			</statBases>
+		</value>
+	</Operation>
+
+<!-- Rock Blocks Items statFactors, influences built walls -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName = "BlocksSandstone" or defName = "BlocksGranite" or defName = "BlocksLimestone" or defName = "BlocksSlate" or defName = "BlocksMarble"]/stuffProps/statFactors</xpath>
+		<value>
+			<statFactors>
+				<Beauty>1.35</Beauty> <!-- marble -->
+				<MaxHitPoints>1.7</MaxHitPoints> <!-- granite -->
+				<WorkToBuild>6.0</WorkToBuild> <!-- granite/generic -->
+				<WorkToMake>1.3</WorkToMake> <!-- granite/generic -->
+			</statFactors>
+		</value>
+	</Operation>
+
+<!-- Cut Not-Marble Blocks statOffsets, marble already has 1 beauty and others have BLANK beauty so u need to add-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>*/ThingDef[defName = "BlocksSandstone" or defName = "BlocksGranite" or defName = "BlocksLimestone" or defName = "BlocksSlate"]/stuffProps</xpath>
+		<value>
+			<statOffsets>
+				<Beauty>1</Beauty> <!-- marble --> 
+			</statOffsets>
+		</value>
+	</Operation>
+	
+<!-- Stone Chunks -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThingDef[defName = "ChunkSandstone" or defName = "ChunkGranite" or defName = "ChunkLimestone" or defName = "ChunkSlate" or defName = "ChunkMarble"]/statBases</xpath>
+		<value>
+			<statBases>
+				<Mass>25</Mass> <!-- granite/marble, slate is 18, etc -->
+			</statBases>
+		</value>
+	</Operation>
+
+</Patch>

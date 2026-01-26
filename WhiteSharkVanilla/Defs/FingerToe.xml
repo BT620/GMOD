@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <BodyPartDef>
+    <defName>Finger</defName>
+    <label>finger</label>
+    <hitPoints>8</hitPoints>
+    <frostbiteVulnerability>8</frostbiteVulnerability>
+    <pawnGeneratorCanAmputate>false</pawnGeneratorCanAmputate>
+    <skinCovered>true</skinCovered>
+    <destroyableByDamage>false</destroyableByDamage>
+    <tags>
+      <li>ManipulationLimbDigit</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>Toe</defName>
+    <label>toe</label>
+    <hitPoints>8</hitPoints>
+    <frostbiteVulnerability>10</frostbiteVulnerability>
+    <pawnGeneratorCanAmputate>false</pawnGeneratorCanAmputate>
+    <skinCovered>true</skinCovered>
+    <destroyableByDamage>false</destroyableByDamage>
+    <tags>
+      <li>MovingLimbDigit</li>
+    </tags>
+  </BodyPartDef>
+  
+</Defs>

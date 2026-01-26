@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Hair_Pink</defName>
+    <label>pink hair</label>
+    <hairColorOverride>(191, 86, 149)</hairColorOverride>
+    <selectionWeight>0.00</selectionWeight>
+    <displayOrderInCategory>170</displayOrderInCategory>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Hair_LightPurple</defName>
+    <label>purple hair</label>
+    <hairColorOverride>(227, 115, 255)</hairColorOverride>
+    <selectionWeight>0.00</selectionWeight>
+    <displayOrderInCategory>180</displayOrderInCategory>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Hair_LightBlue</defName>
+    <label>blue hair</label>
+    <hairColorOverride>(34, 63, 227)</hairColorOverride>
+    <selectionWeight>0.00</selectionWeight>
+    <displayOrderInCategory>140</displayOrderInCategory>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Hair_LightTeal</defName>
+    <label>teal hair</label>
+    <hairColorOverride>(52, 191, 182)</hairColorOverride>
+    <selectionWeight>0.00</selectionWeight>
+    <displayOrderInCategory>150</displayOrderInCategory>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Hair_LightGreen</defName>
+    <label>green hair</label>
+    <hairColorOverride>(72, 201, 40)</hairColorOverride>
+    <selectionWeight>0.00</selectionWeight>
+    <displayOrderInCategory>160</displayOrderInCategory>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Hair_LightOrange</defName>
+    <label>orange hair</label>
+    <hairColorOverride>(189, 133, 49)</hairColorOverride>
+    <selectionWeight>0.00</selectionWeight>
+    <displayOrderInCategory>70</displayOrderInCategory>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Hair_BrightRed</defName>
+    <label>red hair</label>
+    <hairColorOverride>(191, 86, 86)</hairColorOverride>
+    <selectionWeight>0.00</selectionWeight>
+    <displayOrderInCategory>190</displayOrderInCategory>
+  </GeneDef>
+
+</Defs>

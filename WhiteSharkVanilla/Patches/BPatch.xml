@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+
+  <!--
+  <Operation Class="PatchOperationRemove">
+	<xpath>/Defs/ThingDef[defName = "Sandstone"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+	<xpath>/Defs/ThingDef[defName = "Granite"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+	<xpath>/Defs/ThingDef[defName = "Limestone"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+	<xpath>/Defs/ThingDef[defName = "Slate"]</xpath>
+  </Operation>
+
+  -->
+  	<Operation Class="PatchOperationReplace">
+	  <xpath>/Defs/StatDef[defName = "MechFormingSpeed"]/defaultBaseValue</xpath>
+		<value>
+		  <defaultBaseValue>7.2</defaultBaseValue>		  
+	    </value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+	  <xpath>/Defs/StatDef[defName = "MechEnergyUsageFactor"]/defaultBaseValue</xpath>
+		<value>
+		  <defaultBaseValue>0.5</defaultBaseValue>		  
+	    </value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+	  <xpath>/Defs/StatDef[defName = "WastepacksPerRecharge"]/defaultBaseValue</xpath>
+		<value>
+		  <defaultBaseValue>1</defaultBaseValue>		  
+	    </value>
+	</Operation>
+
+
+
+
+</Patch>

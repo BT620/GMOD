@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <StatDef>
+    <defName>IncomingDamageFactor</defName>
+    <label>incoming damage multiplier</label>
+    <description>A multiplier on all incoming damage.</description>
+    <category>PawnCombat</category>
+    <defaultBaseValue>0.5</defaultBaseValue>
+    <minValue>0</minValue>
+    <hideAtValue>1</hideAtValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>4048</displayPriorityInCategory>
+  </StatDef>
+
+  <StatDef>
+    <defName>StaggerDurationFactor</defName>
+    <label>stagger time multiplier</label>
+    <description>A multiplier on the duration of the stagger-slowdown that occurs when damage is taken.</description>
+    <category>PawnCombat</category>
+    <toStringStyle>PercentZero</toStringStyle>
+    <defaultBaseValue>0.5</defaultBaseValue>
+    <minValue>0</minValue>
+    <hideAtValue>1</hideAtValue>
+    <displayPriorityInCategory>1200</displayPriorityInCategory>
+  </StatDef>
+
+  <DamageDef Name="CutBase">
+    <defName>Cut</defName>
+    <label>cut</label>
+    <workerClass>DamageWorker_Cut</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been cut to death.</deathMessage>
+    <hediff>Cut</hediff>
+    <hediffSkin>Cut</hediffSkin>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Slice</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <overkillPctToDestroyPart>0~0.05</overkillPctToDestroyPart>
+    <cutExtraTargetsCurve>
+      <points>
+        <li>0, 0</li>
+        <li>0.6, 1</li>
+        <li>0.9, 2</li>
+        <li>1, 3</li>
+      </points>
+    </cutExtraTargetsCurve>
+    <cutCleaveBonus>1.4</cutCleaveBonus>
+  </DamageDef>
+
+  <DamageDef>
+    <defName>Crush</defName>
+    <label>crush</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been crushed to death.</deathMessage>
+    <hediff>Crush</hediff>
+    <hediffSkin>Cut</hediffSkin>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Blunt</impactSoundType>
+    <armorCategory>Blunt</armorCategory>
+    <overkillPctToDestroyPart>0.2~0.5</overkillPctToDestroyPart>
+  </DamageDef>
+
+  <DamageDef Name="BluntBase">
+    <defName>Blunt</defName>
+    <label>blunt</label>
+    <workerClass>DamageWorker_Blunt</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been beaten to death.</deathMessage>
+    <hediff>Crush</hediff>
+    <hediffSkin>Bruise</hediffSkin>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Blunt</impactSoundType>
+    <armorCategory>Blunt</armorCategory>
+    <overkillPctToDestroyPart>0.2~0.5</overkillPctToDestroyPart>
+    <buildingDamageFactor>1.5</buildingDamageFactor>
+    <bluntStunDuration>2.0</bluntStunDuration>
+    <bluntInnerHitChance>0.4</bluntInnerHitChance>
+    <bluntInnerHitDamageFractionToConvert>0.1~0.2</bluntInnerHitDamageFractionToConvert>
+    <bluntInnerHitDamageFractionToAdd>0.2~0.35</bluntInnerHitDamageFractionToAdd>
+    <bluntStunChancePerDamagePctOfCorePartToHeadCurve>
+      <points>
+        <li>(0.04, 0.20)</li>
+        <li>(0.5, 1)</li>
+      </points>
+    </bluntStunChancePerDamagePctOfCorePartToHeadCurve>
+    <bluntStunChancePerDamagePctOfCorePartToBodyCurve>
+      <points>
+        <li>(0.4, 0)</li>
+        <li>(0.9, 0.15)</li>
+      </points>
+    </bluntStunChancePerDamagePctOfCorePartToBodyCurve>
+  </DamageDef>
+
+  <DamageDef>
+    <defName>Stab</defName>
+    <label>stab</label>
+    <workerClass>DamageWorker_Stab</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been stabbed to death.</deathMessage>
+    <hediff>Stab</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <impactSoundType>Slice</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <stabChanceOfForcedInternal>0.6</stabChanceOfForcedInternal>
+    <overkillPctToDestroyPart>0.2~0.5</overkillPctToDestroyPart>
+  </DamageDef>
+
+  <DamageDef Name="Scratch">
+    <defName>Scratch</defName>
+    <label>scratch</label>
+    <workerClass>DamageWorker_Scratch</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been torn to death.</deathMessage>
+    <hediff>Scratch</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Slice</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <overkillPctToDestroyPart>0~0.35</overkillPctToDestroyPart>
+    <scratchSplitPercentage>0.67</scratchSplitPercentage>
+  </DamageDef>
+
+  <DamageDef Name="Bite">
+    <defName>Bite</defName>
+    <label>bite</label>
+    <workerClass>DamageWorker_Bite</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been bitten to death.</deathMessage>
+    <hediff>Bite</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Slice</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <overkillPctToDestroyPart>0~0.05</overkillPctToDestroyPart>
+  </DamageDef>
+
+  <DamageDef>
+    <defName>RangedStab</defName>
+    <label>stab</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been stabbed to death.</deathMessage>
+    <hediff>Stab</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <impactSoundType>Slice</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <overkillPctToDestroyPart>0~0.35</overkillPctToDestroyPart>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+  </DamageDef>
+
+  <DamageDef Name="Bullet">
+    <defName>Bullet</defName>
+    <label>bullet</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been shot to death.</deathMessage>
+    <hediff>Gunshot</hediff>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Bullet</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <overkillPctToDestroyPart>0~0.35</overkillPctToDestroyPart>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+  </DamageDef>
+
+  <DamageDef Name="Arrow">
+    <defName>Arrow</defName>
+    <label>arrow</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has been shot to death by an arrow.</deathMessage>
+    <hediff>Cut</hediff>
+    <hediffSolid>Crack</hediffSolid>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <impactSoundType>Bullet</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
+    <overkillPctToDestroyPart>0~0.35</overkillPctToDestroyPart>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+  </DamageDef>
+
+</Defs>
